@@ -7,7 +7,6 @@ branches:
   only:
     - master
 
-
 build:
   ci:
     - mvn compiler:compile
