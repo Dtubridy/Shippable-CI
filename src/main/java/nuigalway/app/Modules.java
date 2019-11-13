@@ -56,5 +56,5 @@ public class Modules {
         this.students.add(newStudent);
 
     }
-    
+
 }
