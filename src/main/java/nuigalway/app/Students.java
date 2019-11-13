@@ -1,19 +1,30 @@
 package nuigalway.app;
-
-import java.time.LocalDate;
+import java.util.ArrayList;
+import org.joda.time.LocalDate;
+import org.joda.time.Years;
 
 public class Students {
 
     private String name;
-    private Integer age;
     private LocalDate dob;
-    private Integer id;
-    private String username;
-    private String courses;
-    private String registeredModules;
+    private int age;
+    private int id;
+    ArrayList<Modules> modules = new ArrayList();
+    private Course enrolledCourses;
 
-    public Students(String name, Integer age, LocalDate dob, Integer id, String username, String courses, String registeredModules) {
+
+    public Students(String name, LocalDate dob, int id) {
+        this.setName(name);
+        this.setDOB(dob);
+        this.setID(id);
+        this.setAge(Years.yearsBetween(dob, LocalDate.now()).getYears());
+        this.modules = new ArrayList<>();
     }
+
+    public String getUsername() {
+        return name + age;
+    }
+
 
     public String getName() {
         return name;
@@ -23,51 +34,47 @@ public class Students {
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public LocalDate getDob() {
+    public LocalDate getDOB() {
         return dob;
     }
 
-    public void setDob(LocalDate dob) {
+    public void setDOB(LocalDate dob) {
         this.dob = dob;
     }
 
-    public Integer getId() {
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getID() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setID(int id) {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public ArrayList<Modules> getModules() {
+        return modules;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void addModule(Modules newModule) {modules.add(newModule);}
+
+    public void setModules(ArrayList<Modules> modules) {
+        this.modules = modules;
     }
 
-    public String getCourses() {
-        return courses;
+    public Course getEnrolledCourses() {
+        return enrolledCourses;
     }
 
-    public void setCourses(String courses) {
-        this.courses = courses;
+    public void setEnrolledCourses(Course enrolledCourses) {
+        this.enrolledCourses = enrolledCourses;
     }
 
-    public String getRegisteredModules() {
-        return registeredModules;
-    }
 
-    public void setRegisteredModules(String registeredModules) {
-        this.registeredModules = registeredModules;
-    }
 }
