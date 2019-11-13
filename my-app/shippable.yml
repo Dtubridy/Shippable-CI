@@ -1,15 +1,21 @@
 language: java
 
-jdk: oraclejdk8
+jdK:
+  - openjdk10
 
-before_install:
-   - mvn clean install
+branches:
+  only:
+    - master
 
-after_success:
-   - mvn test
+build:
+  ci:
+    - mvn compiler:compile
+    - mvn test
 
-
-notifications:
-  email:
-      recipients:
-         d.tubridy1@nuigalway.ie
+integrations:
+  notifications:
+    - integrationName: email
+      type: email
+      on_success: yes
+      on_failure: always
+      on_pull_request: never
