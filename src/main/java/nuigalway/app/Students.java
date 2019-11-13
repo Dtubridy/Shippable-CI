@@ -10,7 +10,7 @@ public class Students {
     private int age;
     private int id;
     ArrayList<Modules> modules = new ArrayList();
-    Course enrolledCourses;
+    private Course enrolledCourses;
 
 
     public Students(String name, LocalDate dob, int id) {
