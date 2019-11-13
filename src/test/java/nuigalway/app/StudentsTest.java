@@ -7,9 +7,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-/**
- * Unit test for simple App.
- */
+
 public class StudentsTest{
 
 
