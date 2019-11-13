@@ -12,13 +12,12 @@ public class Students {
     ArrayList<Modules> modules = new ArrayList();
     private Course enrolledCourses;
 
-
-    public Students(String name, LocalDate dob, int id) {
-        this.setName(name);
-        this.setDOB(dob);
-        this.setID(id);
-        this.setAge(Years.yearsBetween(dob, LocalDate.now()).getYears());
-        this.modules = new ArrayList<>();
+    public Students(String name, LocalDate dob, int age, int id, ArrayList<Modules> modules) {
+        this.name = name;
+        this.dob = dob;
+        this.age = age;
+        this.id = id;
+        this.modules = modules;
     }
 
     public String getUsername() {
