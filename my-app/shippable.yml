@@ -5,7 +5,8 @@ jdK:
 
 branches:
   only:
-    - master
+    - test-branch
+
 
 build:
   ci:
