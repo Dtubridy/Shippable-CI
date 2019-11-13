@@ -1,21 +1,16 @@
+
 language: java
 
-jdK:
-  - openjdk10
+jdk: oraclejdk8
 
-branches:
-  only:
-    - master
+before_install:
+   - mvn clean install
 
-build:
-  ci:
-    - mvn compiler:compile
-    - mvn test
+after_success:
+   - mvn test
 
-integrations:
-  notifications:
-    - integrationName: email
-      type: email
-      on_success: yes
-      on_failure: always
-      on_pull_request: never
+
+notifications:
+  email:
+      recipients:
+         classct417@gmail.com
