@@ -1,16 +1,18 @@
 package nuigalway.app;
 
+import java.time.LocalDate;
+
 public class Students {
 
-    String name;
-    Integer age;
-    String dob;
-    Integer id;
-    String username;
-    String courses;
-    String registeredModules;
+    private String name;
+    private Integer age;
+    private LocalDate dob;
+    private Integer id;
+    private String username;
+    private String courses;
+    private String registeredModules;
 
-    public Students(String name, Integer age, String dob, Integer id, String username, String courses, String registeredModules) {
+    public Students(String name, Integer age, LocalDate dob, Integer id, String username, String courses, String registeredModules) {
     }
 
     public String getName() {
@@ -29,11 +31,11 @@ public class Students {
         this.age = age;
     }
 
-    public String getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(String dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 
